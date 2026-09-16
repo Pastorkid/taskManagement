@@ -1,15 +1,28 @@
 <header class="header">
+  <h1>My Anular Routing Guide</h1>
   <nav>
     <ul>
       <li>
+        <!-- relative route -->
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
           >Home</a
         >
       </li>
       <li>
-        <a routerLink="/todo-app" routerLinkActive="active">Todo</a>
+        <!-- absolute route -->
+        <a routerLink="about" routerLinkActive="active">About</a>
+      </li>
+      <li>
+        <a routerLink="/contact" routerLinkActive="active">Contacts</a>
+      </li>
+      <!-- property-binding route -->
+      <li>
+        <a [routerLink]="`${myProductPath}`" routerLinkActive="active">Products</a>
+      </li>
+
+      <li>
+        <a [routerLink]="'dashboard'" routerLinkActive="active">Dashboard</a>
       </li>
     </ul>
-    <input placeholder="search" />
   </nav>
 </header>
