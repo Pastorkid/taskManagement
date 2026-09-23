@@ -9,6 +9,8 @@ import { Dashboard } from './dashboard/dashboard';
 import { DashboardHome } from './dashboard/dashboard-home/dashboard-home';
 import { Profile } from './dashboard/profile/profile';
 import { Settings } from './dashboard/settings/settings';
+import { RxjsPromiseExamples } from './rxjs-promise-examples/rxjs-promise-examples';
+import { Subject } from './subject/subject';
 
 export const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
@@ -40,4 +42,6 @@ export const routes: Routes = [
       },
     ],
   },
+  { path: 'rxjs-promise', component: RxjsPromiseExamples },
+  { path: 'subject', component: Subject },
 ];

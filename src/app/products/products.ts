@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { UtilityService } from '../Services/utility-service';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-products',
-  imports: [RouterLink],
+  imports: [RouterLink, JsonPipe],
   templateUrl: './products.html',
   styleUrl: './products.css',
 })
@@ -11,6 +13,7 @@ export class Products implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
+    private utilityService: UtilityService,
   ) {}
 
   products = [
@@ -68,5 +71,13 @@ export class Products implements OnInit {
       },
     });
     console.log({ category, sort });
+  }
+
+  getFormatedPrice(priceIndollar: string) {
+    const priceInNumber = Number(priceIndollar.replace('$', ''));
+    console.log(priceInNumber);
+
+    console.log(this.utilityService.resetPriceFormat(priceInNumber));
+    return this.utilityService.resetPriceFormat(priceInNumber);
   }
 }

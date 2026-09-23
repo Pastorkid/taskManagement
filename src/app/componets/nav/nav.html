@@ -23,6 +23,18 @@
       <li>
         <a [routerLink]="'dashboard'" routerLinkActive="active">Dashboard</a>
       </li>
+      <li>
+        <a [routerLink]="'rxjs-promise'" routerLinkActive="active">Rxjs-promise</a>
+      </li>
+      <li>
+        <a [routerLink]="'subject'" routerLinkActive="active">Rxjs-Subject</a>
+      </li>
     </ul>
+    <select (change)="handleSelectChange($event)">
+      <option value="$">Price in $</option>
+      <option value="$">Price in $</option>
+      <option value="#">Price in #</option>
+      <option value="€">Price in €</option>
+    </select>
   </nav>
 </header>

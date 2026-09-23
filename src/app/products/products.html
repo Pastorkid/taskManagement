@@ -9,6 +9,8 @@
           <span>Price: {{ product.productPrice }}</span>
           <span>Category: {{ product.category }}</span>
           <span>Rating: {{ product.rating }}</span>
+          {{ getFormatedPrice(product.productPrice).currency }}
+          {{ getFormatedPrice(product.productPrice).formatedPrice }}
         </div>
         <!-- Route params with routerLink -->
         <!-- <button><a [routerLink]="['/product-details', product.id]">View details</a></button> -->
