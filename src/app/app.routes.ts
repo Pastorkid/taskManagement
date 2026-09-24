@@ -11,6 +11,7 @@ import { Profile } from './dashboard/profile/profile';
 import { Settings } from './dashboard/settings/settings';
 import { RxjsPromiseExamples } from './rxjs-promise-examples/rxjs-promise-examples';
 import { Subject } from './subject/subject';
+import { Signal } from './signal/signal';
 
 export const routes: Routes = [
   // { path: '', redirectTo: '', pathMatch: 'full' },
@@ -44,4 +45,5 @@ export const routes: Routes = [
   },
   { path: 'rxjs-promise', component: RxjsPromiseExamples },
   { path: 'subject', component: Subject },
+  { path: 'signal', component: Signal },
 ];

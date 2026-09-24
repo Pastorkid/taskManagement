@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { UtilityService } from '../Services/utility-service';
 import { JsonPipe } from '@angular/common';
+import { CartService } from '../Services/cart-service';
+import { Product } from './prouctInterface';
 
 @Component({
   selector: 'app-products',
@@ -14,6 +16,7 @@ export class Products implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private utilityService: UtilityService,
+    private cartService: CartService,
   ) {}
 
   products = [
@@ -22,6 +25,7 @@ export class Products implements OnInit {
       productName: 'Camera Pro',
       productPrice: '$150',
       productImagePath: 'product1.png',
+      quantity: 1,
       rating: 4.5,
       category: 'Camera',
     },
@@ -30,6 +34,7 @@ export class Products implements OnInit {
       productName: 'Apple Watch',
       productPrice: '$300',
       productImagePath: 'product2.png',
+      quantity: 2,
       rating: 4.8,
       category: 'Watch',
     },
@@ -79,5 +84,9 @@ export class Products implements OnInit {
 
     console.log(this.utilityService.resetPriceFormat(priceInNumber));
     return this.utilityService.resetPriceFormat(priceInNumber);
+  }
+  addToCart(product: Product) {
+    this.cartService.addProduct(product);
+    this.cartService.calculateTotalPrice();
   }
 }
